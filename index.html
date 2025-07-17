@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>American Cars</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #cars {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome Mahdi!</h1>
+  <p>Click the button to see American cars 🚗🇺🇸</p>
+
+  <button onclick="showCars()">Click Me!</button>
+
+  <div id="cars"></div>
+
+  <script>
+    function showCars() {
+      let americanCars = [
+        "Ford Mustang",
+        "Chevrolet Camaro",
+        "Dodge Challenger",
+        "Dodge Charger",
+        "Chevrolet Corvette",
+        "Cadillac Escalade",
+        "Lincoln Navigator",
+        "Jeep Grand Cherokee",
+        "Tesla Model S",
+        "GMC Sierra"
+      ];
+
+      let list = "<ul>";
+      for (let i = 0; i < americanCars.length; i++) {
+        list += "<li>" + americanCars[i] + "</li>";
+      }
+      list += "</ul>";
+
+      document.getElementById("cars").innerHTML = list;
+    }
+  </script>
+
+</body>
+</html>
