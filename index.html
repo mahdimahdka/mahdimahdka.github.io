@@ -1,63 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>American Cars</title>
-  <style>
-    body {
-      background-color: #111;
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      padding: 30px;
-    }
-    button {
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #ff5722;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    #cars {
-      margin-top: 20px;
-      font-size: 18px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>American Cars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+        h1, p {
+            font-size: 28px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        #carList {
+            margin-top: 30px;
+            font-size: 24px;
+        }
+        a {
+            display: block;
+            margin: 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body>
+    <h1>👋 Hello Mahdi!</h1>
+    <p>Click the button to see all American cars 🇺🇸</p>
+    <button onclick="showCars()">Show Cars</button>
 
-  <h1>Welcome Mahdi!</h1>
-  <p>Click the button to see American cars 🚗🇺🇸</p>
+    <div id="carList"></div>
 
-  <button onclick="showCars()">Click Me!</button>
+    <script>
+        function showCars() {
+            const cars = [
+                { name: "Dodge Challenger", url: "https://www.dodge.com/challenger.html" },
+                { name: "Ford Mustang", url: "https://www.ford.com/cars/mustang/" },
+                { name: "Chevrolet Camaro", url: "https://www.chevrolet.com/performance/camaro" },
+                { name: "Chevrolet Corvette", url: "https://www.chevrolet.com/performance/corvette" },
+                { name: "Tesla Model S", url: "https://www.tesla.com/models" },
+                { name: "Dodge Charger", url: "https://www.dodge.com/charger.html" },
+                { name: "Jeep Grand Cherokee", url: "https://www.jeep.com/grand-cherokee.html" },
+                { name: "Ford F-150", url: "https://www.ford.com/trucks/f150/" },
+                { name: "Cadillac Escalade", url: "https://www.cadillac.com/suvs/escalade" },
+                { name: "Lincoln Navigator", url: "https://www.lincoln.com/suvs/navigator/" }
+            ];
 
-  <div id="cars"></div>
-
-  <script>
-    function showCars() {
-      let americanCars = [
-        "Ford Mustang",
-        "Chevrolet Camaro",
-        "Dodge Challenger",
-        "Dodge Charger",
-        "Chevrolet Corvette",
-        "Cadillac Escalade",
-        "Lincoln Navigator",
-        "Jeep Grand Cherokee",
-        "Tesla Model S",
-        "GMC Sierra"
-      ];
-
-      let list = "<ul>";
-      for (let i = 0; i < americanCars.length; i++) {
-        list += "<li>" + americanCars[i] + "</li>";
-      }
-      list += "</ul>";
-
-      document.getElementById("cars").innerHTML = list;
-    }
-  </script>
-
+            let html = "";
+            for (let car of cars) {
+                html += `<a href="${car.url}" target="_blank">${car.name}</a>`;
+            }
+            document.getElementById("carList").innerHTML = html;
+        }
+    </script>
 </body>
 </html>
