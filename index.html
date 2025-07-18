@@ -1,101 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- اضافه شد -->
-    <title>American Cars</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            text-shadow: 2px 2px 4px #000;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 6vw; /* واکنش‌گرا */
-        }
-
-        p {
-            font-size: 4.5vw;
-        }
-
-        button {
-            padding: 12px 24px;
-            font-size: 4.5vw;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            box-shadow: 2px 2px 6px #000;
-            margin-top: 10px;
-        }
-
-        #carList {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        a {
-            display: block;
-            margin: 8px;
-            padding: 10px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            width: 90%;
-            max-width: 400px;
-            font-size: 4vw;
-            transition: 0.3s;
-        }
-
-        a:hover {
-            color: yellow;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-            p {
-                font-size: 24px;
-            }
-            button {
-                font-size: 20px;
-            }
-            a {
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>🇺🇸 Welcome to Mahdi's American Car Site!</h1>
-    <p>Click the button to see all American cars</p>
-    <button onclick="showCars()">Show Cars</button>
-
-    <div id="carList"></div>
-
-    <script>
-        function showCars() {
-            const cars = [
-                { name: "Dodge Challenger", url: "https://www.dodge.com/challenger.html" },
-                { name: "Ford Mustang", url: "https://www.ford.com/cars/mustang/" },
-                { name: "Chevrolet Camaro", url: "https://www.chevrolet.com/performance/camaro" },
-                { name: "Chevrolet Corvette", url: "https://www.chevrolet.com/performance/corvette" },
-                { name: "Tesla Model S", url: "https://www.tesla.com/models" },
-                { name: "Dodge Charger", url: "https://www.dodge.com/charger.html" },
-                { name: "Jeep Grand Cherokee", url: "https://www.jeep.com/grand-cherokee.html" },
-                { name: "Ford F-150", url: "https://www.ford.com/trucks/f150/" },
+const cars = [
+    { name: "Dodge Challenger", url: "https://www.dodge.com/challenger.html" },
+    { name: "Ford Mustang", url: "https://www.ford.com/cars/mustang/" },
+    { name: "Chevrolet Camaro", url: "https://www.chevrolet.com/performance/camaro" },
+    { name: "Chevrolet Corvette", url: "https://www.chevrolet.com/performance/corvette" },
+    { name: "Tesla Model S", url: "https://www.tesla.com/models" },
+    { name: "Dodge Charger", url: "https://www.dodge.com/charger.html" },
+    { name: "Jeep Grand Cherokee", url: "https://www.jeep.com/grand-cherokee.html" },
+    { name: "Ford F-150", url: "https://www.ford.com/trucks/f150/" },
+    { name: "Cadillac Escalade", url: "https://www.cadillac.com/suvs/escalade" },
+    { name: "Lincoln Navigator", url: "https://www.lincoln.com/suvs/navigator/" }
+];
