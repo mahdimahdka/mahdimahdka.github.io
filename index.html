@@ -1,101 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MG American Cars</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://images.unsplash.com/photo-1597004691103-3324e059d277?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dodge Challenger</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+        }header {
+        background-color: black;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    #logo {
-      background-color: black;
-      color: gold;
-      font-size: 36px;
-      font-weight: bold;
-      padding: 20px;
-      border-radius: 50%;
-      width: 90px;
-      height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px auto 10px;
-      box-shadow: 0 0 15px gold;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: gold;
     }
 
-    h1 {
-      text-align: center;
-      font-size: 6vw;
-      margin-top: 10px;
+    .menu {
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
     }
 
-    #carList {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 30px;
-      padding-bottom: 60px;
+    .hero {
+        background-image: url("https://cdn.motor1.com/images/mgl/x6Z38/s3/dodge-challenger-srt-demon.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
-    a {
-      display: block;
-      width: 90%;
-      max-width: 400px;
-      margin: 10px;
-      padding: 15px 20px;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      color: gold;
-      font-size: 4.5vw;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s ease;
+    .hero h1 {
+        font-size: 4rem;
+        color: gold;
+        text-shadow: 2px 2px 5px black;
     }
 
-    a:hover {
-      background: rgba(255, 215, 0, 0.3);
-      color: white;
+    .hero button {
+        margin-top: 20px;
+        padding: 12px 24px;
+        font-size: 1.2rem;
+        border: none;
+        background: gold;
+        color: black;
+        border-radius: 8px;
+        cursor: pointer;
     }
 
-    @media (min-width: 768px) {
-      h1 {
-        font-size: 40px;
-      }
-      a {
-        font-size: 20px;
-      }
+    .specs {
+        padding: 40px 20px;
+        background-color: #1a1a1a;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
     }
-  </style>
+
+    .spec {
+        background-color: #262626;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .gallery {
+        padding: 40px 20px;
+        background-color: #0d0d0d;
+        text-align: center;
+    }
+
+    .gallery img {
+        width: 90%;
+        max-width: 400px;
+        margin: 10px;
+        border-radius: 10px;
+        border: 2px solid gold;
+    }
+
+    .about {
+        padding: 40px 20px;
+        background-color: #1a1a1a;
+    }
+
+    footer {
+        background-color: black;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #aaa;
+    }
+</style>
+
 </head>
 <body>
-  <!-- لوگو بالا -->
-  <div id="logo">MG</div>
+    <header>
+        <div class="logo">MG</div>
+        <div class="menu">☰</div>
+    </header><section class="hero">
+    <h1>Dodge Challenger</h1>
+    <button onclick="document.getElementById('specs').scrollIntoView({ behavior: 'smooth' })">اطلاعات بیشتر</button>
+</section>
 
-  <!-- عنوان -->
-  <h1>Mahdi's American Car Garage</h1>
+<section id="specs" class="specs">
+    <div class="spec">
+        <h3>قدرت</h3>
+        <p>807 اسب بخار</p>
+    </div>
+    <div class="spec">
+        <h3>موتور</h3>
+        <p>6.2L V8 Supercharged</p>
+    </div>
+    <div class="spec">
+        <h3>شتاب</h3>
+        <p>3.4 ثانیه تا 100</p>
+    </div>
+    <div class="spec">
+        <h3>سرعت نهایی</h3>
+        <p>327 کیلومتر در ساعت</p>
+    </div>
+</section>
 
-  <!-- لیست ماشین‌ها -->
-  <div id="carList">
-    <a href="https://www.dodge.com/challenger.html" target="_blank">Dodge Challenger</a>
-    <a href="https://www.ford.com/cars/mustang/" target="_blank">Ford Mustang</a>
-    <a href="https://www.chevrolet.com/performance/camaro" target="_blank">Chevrolet Camaro</a>
-    <a href="https://www.chevrolet.com/performance/corvette" target="_blank">Chevrolet Corvette</a>
-    <a href="https://www.tesla.com/models" target="_blank">Tesla Model S</a>
-    <a href="https://www.dodge.com/charger.html" target="_blank">Dodge Charger</a>
-    <a href="https://www.jeep.com/grand-cherokee.html" target="_blank">Jeep Grand Cherokee</a>
-    <a href="https://www.ford.com/trucks/f150/" target="_blank">Ford F-150</a>
-    <a href="https://www.cadillac.com/suvs/escalade" target="_blank">Cadillac Escalade</a>
-    <a href="https://www.lincoln.com/suvs/navigator/" target="_blank">Lincoln Navigator</a>
-  </div>
+<section class="gallery">
+    <h2>گالری تصاویر</h2>
+    <img src="https://cdn.motor1.com/images/mgl/jk0Vv/s1/dodge-challenger-srt-demon.jpg" alt="Front view">
+    <img src="https://cdn.motor1.com/images/mgl/lpYbP/s1/2023-dodge-challenger-srt-black-ghost.jpg" alt="Side view">
+</section>
+
+<section class="about">
+    <h2>درباره کمپانی Dodge</h2>
+    <p>
+        دوج یک برند خودروسازی آمریکایی با سابقه‌ی بیش از 100 سال است. این کمپانی زیرمجموعه‌ی Stellantis محسوب می‌شود و به‌خاطر خودروهای عضلانی (Muscle Cars) خود مانند Challenger و Charger مشهور است.
+    </p>
+    <p>
+        برای اطلاعات بیشتر به <a href="https://www.dodge.com/" target="_blank" style="color:gold;">سایت رسمی دوج</a> مراجعه کنید.
+    </p>
+</section>
+
+<footer>
+    <p>طراحی شده توسط Mahdi © 2025</p>
+</footer>
+
 </body>
 </html>
