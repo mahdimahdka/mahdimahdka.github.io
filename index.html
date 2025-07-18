@@ -1,12 +1,161 @@
-const cars = [
-    { name: "Dodge Challenger", url: "https://www.dodge.com/challenger.html" },
-    { name: "Ford Mustang", url: "https://www.ford.com/cars/mustang/" },
-    { name: "Chevrolet Camaro", url: "https://www.chevrolet.com/performance/camaro" },
-    { name: "Chevrolet Corvette", url: "https://www.chevrolet.com/performance/corvette" },
-    { name: "Tesla Model S", url: "https://www.tesla.com/models" },
-    { name: "Dodge Charger", url: "https://www.dodge.com/charger.html" },
-    { name: "Jeep Grand Cherokee", url: "https://www.jeep.com/grand-cherokee.html" },
-    { name: "Ford F-150", url: "https://www.ford.com/trucks/f150/" },
-    { name: "Cadillac Escalade", url: "https://www.cadillac.com/suvs/escalade" },
-    { name: "Lincoln Navigator", url: "https://www.lincoln.com/suvs/navigator/" }
-];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahdi's American Cars</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 6vw;
+    }
+
+    p {
+      font-size: 4.5vw;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 4.5vw;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px #000;
+      margin-top: 10px;
+    }
+
+    #carList {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .car-card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      text-align: left;
+    }
+
+    .car-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .car-header img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      background: white;
+      border-radius: 8px;
+      padding: 5px;
+    }
+
+    .car-header a {
+      font-size: 4.5vw;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .car-info {
+      font-size: 4vw;
+      color: #ddd;
+    }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 36px; }
+      p, button { font-size: 20px; }
+      .car-header a { font-size: 22px; }
+      .car-info { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🇺🇸 Welcome to Mahdi's American Car Site!</h1>
+  <p>Click the button to see all American cars</p>
+  <button onclick="showCars()">Show Cars</button>
+
+  <div id="carList"></div>
+
+  <script>
+    function showCars() {
+      const cars = [
+        {
+          name: "Dodge Challenger",
+          url: "https://www.dodge.com/challenger.html",
+          logo: "https://1000logos.net/wp-content/uploads/2018/02/Dodge-Logo-2010.png",
+          company: "Dodge",
+          history: "اولین بار در سال 1970 معرفی شد. یکی از معروف‌ترین ماسل‌کارهای آمریکاست."
+        },
+        {
+          name: "Ford Mustang",
+          url: "https://www.ford.com/cars/mustang/",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Ford_Mustang_logo.svg",
+          company: "Ford",
+          history: "از سال 1964 تولید میشه. نماد ماشین‌های اسپرت آمریکاییه."
+        },
+        {
+          name: "Chevrolet Camaro",
+          url: "https://www.chevrolet.com/performance/camaro",
+          logo: "https://1000logos.net/wp-content/uploads/2018/02/Chevrolet-logo.png",
+          company: "Chevrolet",
+          history: "رقیب اصلی موستانگه که از سال 1966 وارد بازار شد."
+        },
+        {
+          name: "Tesla Model S",
+          url: "https://www.tesla.com/models",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors_logo.svg",
+          company: "Tesla",
+          history: "یک سدان برقی مدرن با قدرت بسیار بالا. تولید از 2012."
+        },
+        {
+          name: "Jeep Grand Cherokee",
+          url: "https://www.jeep.com/grand-cherokee.html",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Jeep_logo.svg",
+          company: "Jeep",
+          history: "یکی از محبوب‌ترین SUVهای آمریکا. مناسب آفرود و خانواده."
+        }
+        // می‌تونی ماشین‌های دیگه رو هم به همین شکل اضافه کنی
+      ];
+
+      let html = "";
+      for (let car of cars) {
+        html += `
+          <div class="car-card">
+            <div class="car-header">
+              <img src="${car.logo}" alt="${car.name} logo">
+              <a href="${car.url}" target="_blank">${car.name}</a>
+            </div>
+            <div class="car-info">
+              <strong>شرکت:</strong> ${car.company}<br>
+              <strong>تاریخچه:</strong> ${car.history}
+            </div>
+          </div>`;
+      }
+
+      document.getElementById("carList").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
