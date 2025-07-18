@@ -1,155 +1,191 @@
 <!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dodge Challenger</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0d0d0d;
-            color: white;
-        }header {
-        background-color: black;
-        padding: 10px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dodge Challenger Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
     .logo {
-        font-size: 24px;
-        font-weight: bold;
-        color: gold;
+      font-size: 24px;
+      font-weight: bold;
+      color: gold;
     }
-
-    .menu {
-        font-size: 28px;
-        color: white;
-        cursor: pointer;
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
     }
-
+    nav {
+      display: none;
+      flex-direction: column;
+      background: #222;
+    }
+    nav a {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: white;
+      border-top: 1px solid #333;
+    }
+    nav a:hover {
+      background: #333;
+    }
     .hero {
-        background-image: url("https://cdn.motor1.com/images/mgl/x6Z38/s3/dodge-challenger-srt-demon.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+      background: url('https://cdn.motor1.com/images/mgl/zJ6Qx/s1/dodge-challenger.jpg') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
     }
-
     .hero h1 {
-        font-size: 4rem;
-        color: gold;
-        text-shadow: 2px 2px 5px black;
+      font-size: 48px;
+      color: gold;
+      text-shadow: 2px 2px 4px #000;
     }
-
-    .hero button {
-        margin-top: 20px;
-        padding: 12px 24px;
-        font-size: 1.2rem;
-        border: none;
-        background: gold;
-        color: black;
-        border-radius: 8px;
-        cursor: pointer;
+    .btn {
+      background: gold;
+      color: black;
+      padding: 12px 24px;
+      border: none;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 8px;
     }
-
     .specs {
-        padding: 40px 20px;
-        background-color: #1a1a1a;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      background: #111;
     }
-
-    .spec {
-        background-color: #262626;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    .card {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid gold;
     }
-
     .gallery {
-        padding: 40px 20px;
-        background-color: #0d0d0d;
-        text-align: center;
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+      border: 2px solid gold;
     }
-
-    .gallery img {
-        width: 90%;
-        max-width: 400px;
-        margin: 10px;
-        border-radius: 10px;
-        border: 2px solid gold;
+    .slides {
+      display: flex;
+      width: 500%;
+      animation: slide 20s infinite;
     }
-
+    .slides img {
+      width: 100%;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(0); }
+      25% { transform: translateX(-100%); }
+      45% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      70% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      95% { transform: translateX(-300%); }
+      100% { transform: translateX(-400%); }
+    }
     .about {
-        padding: 40px 20px;
-        background-color: #1a1a1a;
+      padding: 40px;
+      background: #1b1b1b;
+      text-align: center;
     }
-
     footer {
-        background-color: black;
-        padding: 20px;
-        text-align: center;
-        font-size: 0.9rem;
-        color: #aaa;
+      padding: 20px;
+      background: #000;
+      text-align: center;
+      font-size: 14px;
+      color: gray;
     }
-</style>
-
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">MG</div>
-        <div class="menu">☰</div>
-    </header><section class="hero">
-    <h1>Dodge Challenger</h1>
-    <button onclick="document.getElementById('specs').scrollIntoView({ behavior: 'smooth' })">اطلاعات بیشتر</button>
-</section>
-
-<section id="specs" class="specs">
-    <div class="spec">
-        <h3>قدرت</h3>
-        <p>807 اسب بخار</p>
+  <header>
+    <div class="logo">MG</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </header>
+  <nav id="menu">
+    <a href="#">Home</a>
+    <a href="#specs">Specifications</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About Dodge</a>
+  </nav>
+  <section class="hero">
+    <div>
+      <h1>Dodge Challenger</h1>
+      <button class="btn">Build & Explore</button>
     </div>
-    <div class="spec">
-        <h3>موتور</h3>
-        <p>6.2L V8 Supercharged</p>
+  </section>
+  <section class="specs" id="specs">
+    <div class="card">
+      <h3>Engine</h3>
+      <p>6.2L V8 Supercharged</p>
     </div>
-    <div class="spec">
-        <h3>شتاب</h3>
-        <p>3.4 ثانیه تا 100</p>
+    <div class="card">
+      <h3>Horsepower</h3>
+      <p>807 hp</p>
     </div>
-    <div class="spec">
-        <h3>سرعت نهایی</h3>
-        <p>327 کیلومتر در ساعت</p>
+    <div class="card">
+      <h3>0-100 km/h</h3>
+      <p>3.4 seconds</p>
     </div>
-</section>
-
-<section class="gallery">
-    <h2>گالری تصاویر</h2>
-    <img src="https://cdn.motor1.com/images/mgl/jk0Vv/s1/dodge-challenger-srt-demon.jpg" alt="Front view">
-    <img src="https://cdn.motor1.com/images/mgl/lpYbP/s1/2023-dodge-challenger-srt-black-ghost.jpg" alt="Side view">
-</section>
-
-<section class="about">
-    <h2>درباره کمپانی Dodge</h2>
+    <div class="card">
+      <h3>Top Speed</h3>
+      <p>326 km/h</p>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <div class="slides">
+      <img src="https://cdn.motor1.com/images/mgl/0ANoL/s1/2021-dodge-challenger.jpg" />
+      <img src="https://images.hgmsites.net/lrg/2023-dodge-challenger_100858674_l.jpg" />
+      <img src="https://www.topgear.com/sites/default/files/cars-car/image/2022/05/1-dodge-challenger.jpg" />
+      <img src="https://cdn.jdpower.com/JDPA_2022%20Dodge%20Challenger%20SRT%20Hellcat%20Redeye%20Widebody%20Orange%20Front%20Quarter.jpg" />
+      <img src="https://www.motortrend.com/uploads/2022/11/2023-Dodge-Challenger-SRT-Hellcat-1.jpg" />
+    </div>
+  </section>
+  <section class="about" id="about">
+    <h2>About Dodge</h2>
     <p>
-        دوج یک برند خودروسازی آمریکایی با سابقه‌ی بیش از 100 سال است. این کمپانی زیرمجموعه‌ی Stellantis محسوب می‌شود و به‌خاطر خودروهای عضلانی (Muscle Cars) خود مانند Challenger و Charger مشهور است.
+      Dodge is an American brand of automobiles, known for producing high-performance
+      muscle cars and bold styling. The Challenger is one of the most iconic muscle cars ever built.
     </p>
-    <p>
-        برای اطلاعات بیشتر به <a href="https://www.dodge.com/" target="_blank" style="color:gold;">سایت رسمی دوج</a> مراجعه کنید.
-    </p>
-</section>
-
-<footer>
-    <p>طراحی شده توسط Mahdi © 2025</p>
-</footer>
-
+  </section>
+  <footer>
+    &copy; 2025 Mahdi MG | All Rights Reserved
+  </footer>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </body>
 </html>
